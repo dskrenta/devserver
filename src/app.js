@@ -15,3 +15,6 @@ $.ajax({
     },
     beforeSend: setHeader
 });
+
+let name = 'Mr. Bigglesworth';
+const hello = `${name} will see you now.`;
