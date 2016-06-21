@@ -7,17 +7,28 @@ function fromRootDir(matchPath) {
 }
 
 module.exports = {
-    cache: true,
-    debug: true,
-    devtool: 'eval',
-    entry: './src/app.js',
-    output: {
-        path: path.join(__dirname, "build"),
-        publicPath: '/assets/',
-        filename: 'build.min.js'
-    },
-    resolve: {
-        extensions: ['', '.js', '.json', '.coffee']
-    }
-
+  cache: true,
+  debug: true,
+  devtool: 'eval',
+  entry: './src/app.js',
+  output: {
+    path: path.join(__dirname, "build"),
+    publicPath: '/assets/',
+    filename: 'build.min.js'
+  },
+  resolve: {
+    extensions: ['', '.js', '.json', '.coffee']
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015']
+        }
+      }
+    ]
+  },
 };
