@@ -13,6 +13,7 @@ module.exports = {
     entry: './src/app.js',
     output: {
         path: path.join(__dirname, "build"),
+        publicPath: '/assets/',
         filename: 'build.min.js'
     },
     resolve: {

@@ -15,5 +15,3 @@ $.ajax({
     },
     beforeSend: setHeader
 });
-
-
